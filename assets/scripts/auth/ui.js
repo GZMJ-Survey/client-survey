@@ -1,11 +1,11 @@
 'use strict';
 
-const success = () => {
-
+const success = (data) => {
+  console.log(data);
 };
 
-const failure = () => {
-
+const failure = (error) => {
+  console.error(error);
 };
 
 module.exports = {

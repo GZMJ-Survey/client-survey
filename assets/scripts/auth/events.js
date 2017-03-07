@@ -6,47 +6,43 @@ const ui = require('./ui');
 const store = require('../store');
 
 
-const onSignUp = function (event) {
+const onSignUp = function(event) {
   event.preventDefault();
   let data = getFormFields(event.target);
   api.signUp(data)
-  .then(ui.successSignUp)
-  .catch(ui.failureSignUp)
-  ;
+    .then(ui.success)
+    .catch(ui.failure);
 };
 
-const onSignIn = function (event) {
+const onSignIn = function(event) {
   event.preventDefault();
   let data = getFormFields(event.target);
   api.signIn(data)
-  .then((response) => {
-    store.user = response.user;
-    return store;
-  })
-  .then(ui.successSignIn)
-  .catch(ui.failureSignIn)
-  ;
+    .then((response) => {
+      store.user = response.user;
+      return store;
+    })
+    .then(ui.success)
+    .catch(ui.failure);
 };
 
-const onChangePassword = function (event) {
+const onChangePassword = function(event) {
   event.preventDefault();
   let data = getFormFields(event.target);
   api.changePassword(data)
-  .then(ui.successChangePassword)
-  .catch(ui.failureChangePassword)
-  ;
+    .then(ui.success)
+    .catch(ui.failure);
 };
 
-const onSignOut = function (event) {
+const onSignOut = function(event) {
   event.preventDefault();
   api.signOut()
-  .then(() => {
-    delete store.user;
-    return store;
-  })
-  .then(ui.successSignOut)
-  .catch(ui.failure)
-  ;
+    .then(() => {
+      delete store.user;
+      return store;
+    })
+    .then(ui.success)
+    .catch(ui.failure);
 };
 
 
