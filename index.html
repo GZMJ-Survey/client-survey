@@ -1,25 +1,65 @@
 <!DOCTYPE html>
 <html>
-    <head>
-      <title>Example</title>
-      <meta name="viewport" content="width=device-width, initial-scale=1">
 
-      <!-- Do not add `link` tags unless you know what you are doing -->
-      <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+<head>
+  <title>Example</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-      <!-- Do not add `script` tags unless you know what you are doing -->
-      <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
-      <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
-    </head>
-    <body class="container-fluid">
-      <h1>Example</h1>
+  <!-- Do not add `link` tags unless you know what you are doing -->
+  <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
 
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-      eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-      minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
-      ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-      velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
-      cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
-      est laborum.</p>
-    </body>
+  <!-- Do not add `script` tags unless you know what you are doing -->
+  <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
+  <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
+</head>
+
+<body class="container-fluid">
+  <h1>Client Survey</h1>
+
+  <form id="sign-up">
+    <fieldset>
+      <label>
+               <input type="text" placeholder="Email" name="credentials[email]">
+             </label>
+      <input type="password" placeholder="Password" name="credentials[password]">
+      <label>
+               <input type="password" placeholder="Password Confirmation" name="credentials[password_confirmation]">
+             </label>
+      <label>
+             <input type="submit" name="submit" value="Sign up!">
+           </label>
+    </fieldset>
+  </form>
+
+  <form id="sign-in">
+    <fieldset>
+      <label>
+               <input type="text" placeholder="Email" name="credentials[email]">
+             </label>
+      <label>
+               <input type="password" placeholder="Password" name="credentials[password]">
+             </label>
+      <input type="submit" name="submit" value="Sign in!">
+    </fieldset>
+  </form>
+
+  <form id="sign-out">
+    <fieldset>
+      <input type="submit" name="submit" value="Sign Out!">
+    </fieldset>
+  </form>
+
+  <form id="change-password">
+    <fieldset>
+      <label>
+    <input type="password" placeholder="Old Password" name="passwords[old]">
+    <input type="password" placeholder="New Password" name="passwords[new]">
+  </label>
+      <input type="submit" name="submit" value="Change Password">
+    </fieldset>
+  </form>
+
+
+</body>
+
 </html>
