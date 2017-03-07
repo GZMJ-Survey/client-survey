@@ -1,3 +1,5 @@
+# [`Entity Relational Diagram`](client-survey-erd.jpg)
+
 ## User Stories
 
 User can:
