@@ -10,7 +10,17 @@ const failureIndex = (error) => {
   console.error(error);
 };
 
+const successSurveyCreate = (data) => {
+  console.log(data);
+};
+
+const failureSurveyCreate = (error) => {
+  console.log(error);
+};
+
 module.exports = {
   successIndex,
   failureIndex,
+  successSurveyCreate,
+  failureSurveyCreate,
 };

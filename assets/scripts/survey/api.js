@@ -13,6 +13,18 @@ const surveyIndex = function() {
   });
 };
 
+const surveyCreate = function (data) {
+  return $.ajax({
+    url: config.apiOrigin + '/surveys',
+    method: 'POST',
+    headers: {
+      Authorization: `Token token=${store.user.token}`,
+    },
+    data: data,
+  });
+};
+
 module.exports = {
   surveyIndex,
+  surveyCreate,
 };
