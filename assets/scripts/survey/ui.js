@@ -1,9 +1,8 @@
 'use strict';
 
 const successIndex = (data) => {
-  console.log(data.surveys.length);
   for(let i=0;i<data.surveys.length;i++){
-    $('.index-display').append(JSON.stringify((data.surveys)[i].question) + "<br>");
+    $('.index-display').append(JSON.stringify((data.surveys)[i].question) + "<br>" + (data.surveys)[i].answer + "<br>");
   }
 };
 
