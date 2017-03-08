@@ -1,8 +1,9 @@
 'use strict';
 
 const successIndex = (data) => {
+  console.log(data);
   for(let i=0;i<data.surveys.length;i++){
-    $('.index-display').append(JSON.stringify((data.surveys)[i].question) + "<br>" + (data.surveys)[i].answer + "<br>");
+    $('.index-display').append((data.surveys[i].title) + "<br>" + JSON.stringify((data.surveys)[i].questions[0]) + "<br>");
   }
 };
 
@@ -18,9 +19,14 @@ const failureSurveyCreate = (error) => {
   console.log(error);
 };
 
+const successQuestionCreate = (data) => {
+  console.log(data);
+};
+
 module.exports = {
   successIndex,
   failureIndex,
   successSurveyCreate,
   failureSurveyCreate,
+  successQuestionCreate,
 };
