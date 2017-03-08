@@ -3,11 +3,12 @@
 const setAPIOrigin = require('../../lib/set-api-origin');
 const config = require('./config');
 const events = require('./auth/events.js');
-
+const surveyEvents = require('./survey/events.js');
 
 $(() => {
   setAPIOrigin(location, config);
   events.addHandlers();
+  surveyEvents.addHandlers();
 });
 
 
