@@ -33,11 +33,24 @@ const onUpdateSurveyQuestion = function(event) {
     .catch(ui.failureSurveyCreate);
 };
 
+const onAnswer = function(event) {
+  event.preventDefault();
+  let data = getFormFields(event.target);
+  let id = $(event.target).data('id');
+
+  console.log('servey id is ',  id);
+  console.log(data);
+
+  api.updateAnswer(data, store.surveyid)
+    .then(ui.successAnswer)
+    .catch(ui.failureAnswer);
+};
+
 const addHandlers = () => {
   $('.survey-index').on('click', onSurveyIndex);
   $('#survey-create').on('submit', onSurveyCreate);
   $('#question-create').on('submit', onUpdateSurveyQuestion);
-
+  $('.index-display').on('click', '.answer-question', onAnswer);
 };
 
 

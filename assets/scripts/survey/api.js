@@ -35,8 +35,21 @@ const updateSurveyQuestion = function (data, id) {
   });
 };
 
+const updateAnswer = function (data, id) {
+  return $.ajax({
+    url: config.apiOrigin + '/surveys/' + id,
+    method: 'PATCH',
+    headers: {
+      Authorization: `Token token=${store.user.token}`,
+    },
+    data: data,
+  });
+};
+
+
 module.exports = {
   surveyIndex,
   surveyCreate,
   updateSurveyQuestion,
+  updateAnswer,
 };

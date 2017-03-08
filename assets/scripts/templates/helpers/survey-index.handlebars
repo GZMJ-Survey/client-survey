@@ -1,0 +1,15 @@
+{{#each surveys as |survey|}}
+<div class="show-survey" survey-id="{{survey._id}}">
+  <form>
+    <fieldset>
+      <label>
+        <div>{{survey.title}}</div>
+        <div>{{survey.questions}}</div>
+        <input type="radio" name="survey[questions[answer]]" data-bind="checked:IsChecked, checkedValue: true"/>True
+        <input type="radio" name="survey[questions[answer]]" data-bind="checked:IsChecked, checkedValue: false"/>False
+      </label>
+      <input data-id="{{survey.id}}" class="answer-question" type="submit" name="submit" value="Submit Answer">
+    </fieldset>
+  </form>
+</div>
+{{/each}}
