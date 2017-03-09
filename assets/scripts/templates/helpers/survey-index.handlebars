@@ -10,8 +10,8 @@
           <div class="survey-problem">{{question.problem}}</div>
 
           </div>
-        <input type="radio"   value=true data-bind="checked:IsChecked, checkedValue: true"/>Yes
-        <input type="radio"  value=false data-bind="checked:IsChecked, checkedValue: false"/>No
+        <input type="radio" name="{{question.id}}" value=true data-bind="checked:IsChecked, checkedValue: true"/>Yes
+        <input type="radio" name="{{question.id}}" value=false data-bind="checked:IsChecked, checkedValue: false"/>No
           {{/each}}
 
       </label>
@@ -20,3 +20,4 @@
   </form>
 </div>
 {{/each}}
+</div>
