@@ -35,13 +35,14 @@ const onUpdateSurveyQuestion = function(event) {
 
 const onAnswer = function(event) {
   event.preventDefault();
-  let data = getFormFields(event.target);
+  // console.log(event.target);
   let id = $(event.target).data('id');
+  // console.log('servey id is ',  id);
 
-  console.log('servey id is ',  id);
-  console.log(data);
+  let data = getFormFields(event.target);
+  console.log('data is ', data);
 
-  api.updateAnswer(data, store.surveyid)
+  api.updateAnswer(data, id)
     .then(ui.successAnswer)
     .catch(ui.failureAnswer);
 };

@@ -4,9 +4,13 @@
     <fieldset>
       <label>
         <div>{{survey.title}}</div>
-        <div>{{survey.questions}}</div>
-        <input type="radio" name="survey[questions[answer]]" data-bind="checked:IsChecked, checkedValue: true"/>True
-        <input type="radio" name="survey[questions[answer]]" data-bind="checked:IsChecked, checkedValue: false"/>False
+
+        {{#each survey.questions as |question|}}
+        <div>{{question.problem}}</div>
+        {{/each}}
+
+        <input type="radio" name="surveys[questions][answer][response]" value="true" data-bind="checked:surveys[questions][answer][response], checkedValue: true"/>True
+        <input type="radio" name="surveys[questions][answer][response]" value="false" data-bind="checked:surveys[questions][answer][response], checkedValue: false"/>False
       </label>
       <input data-id="{{survey.id}}" class="answer-question" type="submit" name="submit" value="Submit Answer">
     </fieldset>
