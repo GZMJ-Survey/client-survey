@@ -6,11 +6,14 @@
         <div>{{survey.title}}</div>
 
         {{#each survey.questions as |question|}}
-        <div>{{question.problem}}</div>
-        {{/each}}
+        <div class="survey-questions">
+          <div class="survey-problem">{{question.problem}}</div>
 
-        <input type="radio" name="surveys[questions][answer][response]" value="true" data-bind="checked:surveys[questions][answer][response], checkedValue: true"/>True
-        <input type="radio" name="surveys[questions][answer][response]" value="false" data-bind="checked:surveys[questions][answer][response], checkedValue: false"/>False
+          </div>
+        <input type="radio"   value=true data-bind="checked:IsChecked, checkedValue: true"/>Yes
+        <input type="radio"  value=false data-bind="checked:IsChecked, checkedValue: false"/>No
+          {{/each}}
+
       </label>
       <input data-id="{{survey.id}}" class="answer-question" type="submit" name="submit" value="Submit Answer">
     </fieldset>

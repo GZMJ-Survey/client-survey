@@ -20,29 +20,30 @@ const surveyCreate = function (data) {
     headers: {
       Authorization: `Token token=${store.user.token}`,
     },
-    data: data,
+    data,
   });
 };
 
-const updateSurveyQuestion = function (data, id) {
+const updateSurveyQuestion = function (data) {
   return $.ajax({
-    url: config.apiOrigin + '/surveys/' + id,
+    url: config.apiOrigin + '/surveys/' + data.survey.id,
     method: 'PATCH',
     headers: {
       Authorization: `Token token=${store.user.token}`,
     },
-    data: data,
+    data,
   });
 };
 
 const updateAnswer = function (data, id) {
+  console.log(data);
   return $.ajax({
     url: config.apiOrigin + '/surveys/' + id,
     method: 'PATCH',
     headers: {
       Authorization: `Token token=${store.user.token}`,
     },
-    data: data,
+    data,
   });
 };
 
