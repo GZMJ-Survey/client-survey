@@ -58,7 +58,7 @@ const onDestroy = function (event) {
   event.preventDefault();
 
   let id = $(event.target).data('id');
-  console.log("id is ", id);
+  // console.log("id is ", id);
 
   api.destroySurvey(id)
     .then(ui.successDestroy)
