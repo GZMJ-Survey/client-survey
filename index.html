@@ -16,48 +16,116 @@
 <body class="container-fluid">
   <h1>Client Survey</h1>
 
-  <form id="sign-up">
-    <fieldset>
-      <label>
-               <input type="text" placeholder="Email" name="credentials[email]">
-             </label>
-      <input type="password" placeholder="Password" name="credentials[password]">
-      <label>
-               <input type="password" placeholder="Password Confirmation" name="credentials[password_confirmation]">
-             </label>
-      <label>
-             <input type="submit" name="submit" value="Sign up!">
-           </label>
-    </fieldset>
-  </form>
+  <button id="button-signup-nav"type="button" class="nav-bar btn btn-primary" data-toggle="modal" data-target="#modalSignUp" data-whatever="@mdo">Sign Up</button>
+  <button id="button-signin-nav" type="button" class="nav-bar btn btn-primary" data-toggle="modal" data-target="#modalSignIn" data-whatever="@mdo">Sign In</button>
+  <button id="button-signout-nav" type="button" class="nav-bar style-button-signout btn btn-primary" data-toggle="modal" data-target="#modalSignOut" data-whatever="@mdo">Sign Out</button>
+  <button id="button-password" type="button" class="nav-bar style-button-password btn btn-primary" data-toggle="modal" data-target="#modalChangePassword" data-whatever="@mdo">Change Password</button>
 
-  <form id="sign-in">
-    <fieldset>
-      <label>
-               <input type="text" placeholder="Email" name="credentials[email]">
-             </label>
-      <label>
-               <input type="password" placeholder="Password" name="credentials[password]">
-             </label>
-      <input type="submit" name="submit" value="Sign in!">
-    </fieldset>
-  </form>
+  <div class="message"></div>
+  <div class="user-name"></div>
 
-  <form id="sign-out">
-    <fieldset>
-      <input type="submit" name="submit" value="Sign Out!">
-    </fieldset>
-  </form>
+  <!-- Modal Sign Up-->
+  <div class="modal fade sign-up" id="modalSignUp" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content content-width">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        </div>
+        <div class="modal-body">
 
-  <form id="change-password">
-    <fieldset>
-      <label>
-    <input type="password" placeholder="Old Password" name="passwords[old]">
-    <input type="password" placeholder="New Password" name="passwords[new]">
-  </label>
-      <input type="submit" name="submit" value="Change Password">
-    </fieldset>
-  </form>
+        <form id="sign-up">
+          <fieldset>
+            <legend>Sign Up</legend>
+            <label>
+                <input type="text" placeholder="Email" class="form-control" name="credentials[email]">
+            </label>
+            <input type="password" placeholder="Password" class="form-control" name="credentials[password]">
+            <label>
+                 <input type="password" placeholder="Password Confirmation" class="form-control" name="credentials[password_confirmation]">
+            </label>
+            <label>
+                <input type="submit" class="style-modalinside-btn form-control button-form" name="submit" value="Sign Up">
+            </label>
+          </fieldset>
+        </form>
+
+        </div> <!-- End of modal body -->
+      </div> <!-- modal-content -->
+    </div> <!-- modal-dialog -->
+  </div> <!-- End of modalSignUp -->
+
+
+  <!-- Modal Sign In-->
+  <div class="modal fade" id="modalSignIn" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content content-width">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        </div>
+        <div class="modal-body">
+
+        <form id="sign-in">
+          <fieldset>
+            <legend>Sign In</legend>
+            <label>
+                <input type="text" class="form-control" placeholder="Email" name="credentials[email]">
+            </label>
+            <label>
+                 <input type="password" class="form-control" placeholder="Password" name="credentials[password]">
+            </label>
+            <input type="submit" class="style-modalinside-btn button-form" name="submit" value="Sign In">
+          </fieldset>
+        </form>
+
+         </div> <!-- End of modal body -->
+      </div> <!-- modal-content -->
+    </div> <!-- modal-dialog -->
+  </div> <!-- End of modalSignIn -->
+
+  <!-- Modal Sign Out -->
+  <div class="modal fade" id="modalSignOut" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content content-width">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        </div>
+        <div class="modal-body">
+
+        <form id="sign-out">
+          <fieldset>
+            <input type="submit" class="style-modalinside-btn button-form" name="submit" value="Sign Out">
+          </fieldset>
+        </form>
+        </div> <!-- End of modal body -->
+      </div> <!-- modal-content -->
+    </div> <!-- modal-dialog -->
+  </div> <!-- End of modalSignOut -->
+
+
+  <!-- Modal Change Password -->
+   <div class="modal fade" id="modalChangePassword" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+     <div class="modal-dialog" role="document">
+       <div class="modal-content content-width">
+         <div class="modal-header">
+           <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+         </div>
+         <div class="modal-body">
+
+        <form id="change-password">
+          <fieldset>
+            <legend>Change Password</legend>
+            <label>
+          <input type="password" placeholder="Old Password" class="form-control" name="passwords[old]">
+          <input type="password" placeholder="New Password" class="form-control" name="passwords[new]">
+        </label>
+            <input type="submit" class="style-modalinside-btn button-form" name="submit" value="Change Password">
+          </fieldset>
+        </form>
+
+        </div> <!-- End of modal body -->
+      </div> <!-- modal-content -->
+    </div> <!-- modal-dialog -->
+   </div> <!-- End of modalChangePassword -->
 
 
   <!-- <form id="survey-create">

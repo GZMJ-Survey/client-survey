@@ -9,8 +9,10 @@ const surveyStore = require('../surveyStore');
 const onSurveyIndex = function(event) {
   event.preventDefault();
   api.surveyIndex()
+
     .then(ui.successIndex)
     .catch(ui.failureIndex);
+
 };
 
 const onSurveyCreate = function(event) {
@@ -36,22 +38,34 @@ const onUpdateSurveyQuestion = function(event) {
 
 const onAnswer = function(event) {
   event.preventDefault();
+  console.log(surveyStore.length);
+  console.log(this);
+  let problems = [];
+  // for (let i = 0; i < surveyStore.length; i++) {
+  //   let result = {};
+  //   result = {
+  //     problem; $('this')
+  //   };
+  // }
+  // let data = {
+  //   survey: {
+  //     questions: problems
+      // questions: [{
+      //   problem: $('.survey-problem').text(),
+      //   answers: {
+      //     response: $('input:checked').val()
+      //   }
+      // }]
 
-    let data = {
-      survey: {
-        questions: [{
-          problem: $('.survey-problem').text(),
-          answers: [{
-            response: $('input:checked').val()
-          }]
-        }]
-      }
-    };
-    api.updateAnswer(data, $('.answer-question').data("id"))
-    .then((response)=>console.log(response))
-    .catch((error)=>console.error(error))
-    .then(ui.successAnswer)
-    .catch(ui.failureAnswer);
+    // }
+
+
+
+    // api.updateAnswer(data, $('.answer-question').data("id"))
+    // .then((response)=>console.log(response))
+    // .catch((error)=>console.error(error))
+    // .then(ui.successAnswer)
+    // .catch(ui.failureAnswer);
 };
 
 const onDestroy = function (event) {
