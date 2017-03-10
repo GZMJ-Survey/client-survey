@@ -2,9 +2,9 @@
 <div class="show-survey" survey-id="{{survey._id}}">
   <form>
     <fieldset>
-      <label>
         <div>{{survey.title}}</div>
         <input type="button" data-id="{{survey._id}}" value="delete survey" class="survey-destroy">
+        <label>
 
         {{#each survey.questions as |question|}}
         <div class="survey-questions">
