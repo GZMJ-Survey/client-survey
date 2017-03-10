@@ -75,6 +75,33 @@ const onAnswer = function(event) {
     .catch((error)=>console.error(error))
     .then(ui.successAnswer)
     .catch(ui.failureAnswer);
+  console.log(this);
+  let problems = [];
+  // for (let i = 0; i < surveyStore.length; i++) {
+  //   let result = {};
+  //   result = {
+  //     problem; $('this')
+  //   };
+  // }
+  // let data = {
+  //   survey: {
+  //     questions: problems
+      // questions: [{
+      //   problem: $('.survey-problem').text(),
+      //   answers: {
+      //     response: $('input:checked').val()
+      //   }
+      // }]
+
+    // }
+
+
+
+    // api.updateAnswer(data, $('.answer-question').data("id"))
+    // .then((response)=>console.log(response))
+    // .catch((error)=>console.error(error))
+    // .then(ui.successAnswer)
+    // .catch(ui.failureAnswer);
 };
 
 const onDestroy = function (event) {
