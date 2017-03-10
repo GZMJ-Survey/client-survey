@@ -47,10 +47,20 @@ const updateAnswer = function (data, id) {
   });
 };
 
+const destroySurvey = function (id) {
+  return $.ajax({
+    url: config.apiOrigin + '/surveys/' + id,
+    method: 'DELETE',
+    headers: {
+      Authorization: `Token token=${store.user.token}`,
+    },
+  });
+};
 
 module.exports = {
   surveyIndex,
   surveyCreate,
   updateSurveyQuestion,
   updateAnswer,
+  destroySurvey
 };

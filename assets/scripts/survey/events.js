@@ -54,11 +54,23 @@ const onAnswer = function(event) {
     .catch(ui.failureAnswer);
 };
 
+const onDestroy = function (event) {
+  event.preventDefault();
+
+  let id = $(event.target).data('id');
+  console.log("id is ", id);
+
+  api.destroySurvey(id)
+    .then(ui.successDestroy)
+    .catch(ui.failureDestroy);
+};
+
 const addHandlers = () => {
   $('.survey-index').on('click', onSurveyIndex);
   $('#survey-create').on('submit', onSurveyCreate);
   $('#question-create').on('submit', onUpdateSurveyQuestion);
   $('.index-display').on('click', '.answer-question', onAnswer);
+  $('.index-display').on('click', '.survey-destroy', onDestroy);
 };
 
 

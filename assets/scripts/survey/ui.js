@@ -32,6 +32,14 @@ const failureAnswer = (error) => {
   console.log(error);
 };
 
+const successDestroy = (data) => {
+  console.log(data);
+};
+
+const failureDestroy = (error) => {
+  console.log(error);
+};
+
 module.exports = {
   successIndex,
   failureIndex,
@@ -40,4 +48,6 @@ module.exports = {
   successQuestionCreate,
   successAnswer,
   failureAnswer,
+  successDestroy,
+  failureDestroy,
 };
