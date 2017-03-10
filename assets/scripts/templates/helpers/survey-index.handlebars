@@ -11,6 +11,8 @@
           <div class="survey-problem">{{question.problem}}</div>
 
           </div>
+        <input class="survey-id" value="{{survey._id}}">
+        <input class="survey-problem-id" value="{{question._id}}">
         <input type="radio" name="{{question.id}}" value=true data-bind="checked:IsChecked, checkedValue: true"/>Yes
           {{/each}}
 

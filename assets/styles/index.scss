@@ -1,2 +1,75 @@
 $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 @import '~bootstrap-sass/assets/stylesheets/bootstrap';
+$desktop: '(min-width: 1024px)';
+$tablet: '(min-width: 481px) and (max-width: 1023px)';
+$phone: '(max-width: 480px)';
+
+$accent-color: #4286f4;
+$accent-hover: #034cc1;
+$button-color: #F44336;
+$button-hover: #E53935;
+
+@media #{$desktop} {
+
+
+}
+
+@media #{$tablet} {
+
+
+}
+
+@media #{$phone} {
+
+
+}
+
+
+#button-signup-nav {
+  background-color: $button-color;
+  border-color: transparent;
+}
+
+#button-signin-nav {
+  background-color: $button-color;
+  border-color: transparent;
+}
+
+#button-signout-nav {
+  background-color: $button-color;
+  border-color: transparent;
+}
+
+#button-password {
+  background-color: $button-color;
+  border-color: transparent;
+}
+
+
+#button-signup-nav:hover {
+  background-color: $button-hover;
+  border-color: transparent;
+}
+
+#button-signin-nav:hover {
+  background-color: $button-hover;
+  border-color: transparent;
+}
+
+#button-signout-nav:hover {
+  background-color: $button-hover;
+  border-color: transparent;
+}
+
+#button-password:hover {
+  background-color: $button-hover;
+  border-color: transparent;
+}
+
+.style-button-signout {
+  display: none;
+}
+
+.style-button-password {
+  display: none;
+}
