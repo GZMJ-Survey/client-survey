@@ -48,4 +48,7 @@ module.exports = {
   failureSurveyCreate,
   successQuestionCreate,
   successAnswer,
+  failureAnswer,
+  successDestroy,
+  failureDestroy,
 };
