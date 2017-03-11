@@ -30,15 +30,20 @@ const onSurveyCreate = function(event) {
 
 const onUpdateSurveyQuestion = function(event) {
   event.preventDefault();
-  let data = {
-    survey: {
-      id: $('#survey-id-input').val(),
-      questions: {
-        problem: $('#problem-input').val(),
 
-      }
-    }
-  };
+  console.log("this is", $('#problem-input').val());
+  console.log("this is", $('#survey-id-input').val());
+  let data = getFormFields(event.target);
+  // let data = {
+  //   survey: {
+  //     id: $('#survey-id-input').val(),
+  //     questions: {
+  //       problem: $('#problem-input').val(),
+  //       answers: []
+  //     }
+  //   }
+  // };
+
   api.updateSurveyQuestion(data)
     .then(ui.successQuestionCreate)
     .catch(ui.failureSurveyCreate);
