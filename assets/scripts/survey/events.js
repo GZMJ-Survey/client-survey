@@ -30,14 +30,12 @@ const onSurveyCreate = function(event) {
 
 const onUpdateSurveyQuestion = function(event) {
   event.preventDefault();
-  console.log("this is", $('#problem-input').val());
-  console.log("this is", $('#survey-id-input').val());
   let data = {
     survey: {
       id: $('#survey-id-input').val(),
       questions: {
         problem: $('#problem-input').val(),
-        answers: []
+
       }
     }
   };
