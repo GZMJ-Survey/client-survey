@@ -2,23 +2,22 @@
 <div class="show-survey" survey-id="{{survey._id}}">
   <form>
     <fieldset>
-        <div>{{survey.title}}</div>
+      <input type="button" class="survey-show" value="{{survey.title}}" data-id="{{survey._id}}">
+      <label class="survey-contents">
+        {{survey.title}}
         <input type="button" data-id="{{survey._id}}" value="delete survey" class="survey-destroy">
         <label>
-
-        {{#each survey.questions as |question|}}
-        <div class="survey-questions">
-          <div class="survey-problem">{{question.problem}}</div>
-
+          {{#each survey.questions as |question|}}
+          <div class="survey-questions">
+            <div class="survey-problem">{{question.problem}}</div>
           </div>
-        <input class="survey-id" value="{{survey._id}}">
-        <input class="survey-problem-id" value="{{question._id}}">
-        <input type="radio" name="{{question.id}}" value=true data-bind="checked:IsChecked, checkedValue: true"/>Yes
-        <input type="radio" name="{{question.id}}" value=false data-bind="checked:IsChecked, checkedValue: true"/>No
-
+          <input class="survey-id" value="{{survey._id}}" style="display: none;">
+          <input class="survey-problem-id" value="{{question._id}}" style="display: none;">
+          <input type="radio" name="{{question.id}}" value=true data-bind="checked:IsChecked, checkedValue: true"/>Yes
+          <input type="radio" name="{{question.id}}" value=false data-bind="checked:IsChecked, checkedValue: true"/>No
           {{/each}}
-
-      </label>
+        </label>
+    </label>
       <input data-id="{{survey.id}}" class="answer-question" type="submit" name="submit" value="Submit Answer">
     </fieldset>
   </form>

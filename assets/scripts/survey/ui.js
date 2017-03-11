@@ -7,6 +7,7 @@ const successIndex = (data) => {
   surveyStore.length=data.surveys[0].questions.length;
   let surveyHtml = surveyIndexHandlerbars({ surveys: data.surveys });
   $('.index-display').html(surveyHtml);
+  $('label.survey-contents').hide();
   return surveyStore;
 };
 
