@@ -1,5 +1,3 @@
-# [`Entity Relational Diagram`](client-survey-erd.jpg)
-
 # About
 
 This survey team project front end interacts with it's back end (link to back end repo here). The app lets a user have authorization, and have/take surveys.
