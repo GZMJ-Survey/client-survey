@@ -30,7 +30,17 @@ const onSurveyCreate = function(event) {
 
 const onUpdateSurveyQuestion = function(event) {
   event.preventDefault();
-  let data = getFormFields(event.target);
+  console.log("this is", $('#problem-input').val());
+  console.log("this is", $('#survey-id-input').val());
+  let data = {
+    survey: {
+      id: $('#survey-id-input').val(),
+      questions: {
+        problem: $('#problem-input').val(),
+        answers: []
+      }
+    }
+  };
   api.updateSurveyQuestion(data)
     .then(ui.successQuestionCreate)
     .catch(ui.failureSurveyCreate);
@@ -40,26 +50,25 @@ const onAnswer = function(event) {
   event.preventDefault();
   console.log(surveyStore.length);
 
-  console.log('this is the survey problem id', $('.survey-problem-id')[0].value);
-  console.log('this is the survey id', $('.survey-id')[0].value);
+  let answers = [];
+  let result = {
+       answers: {
+        response: false
+       }
+     };
 
-  let problems = [];
   for (let i = 0; i < surveyStore.length; i++) {
-    let result = {};
-    result = {
-     answers: {
-      response: true
-     }
-    };
-    problems.push(result);
-
+    answers[i] = result;
   }
+  console.log(answers);
+
   let data = {
     survey: {
-      questions: problems
+      questions: answers
     }
-
   };
+
+  console.log(data);
 
     api.updateAnswer(data, $('.answer-question').data("id"))
     .then((response)=>console.log(response))

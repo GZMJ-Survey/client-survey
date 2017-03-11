@@ -3,6 +3,7 @@ const surveyStore = require('../surveyStore');
 const surveyIndexHandlerbars = require('../templates/helpers/survey-index.handlebars');
 
 const successIndex = (data) => {
+  console.log(data);
   surveyStore.length=data.surveys[0].questions.length;
   let surveyHtml = surveyIndexHandlerbars({ surveys: data.surveys });
   $('.index-display').html(surveyHtml);
