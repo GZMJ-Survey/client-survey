@@ -50,6 +50,7 @@ const signInSuccess = function (data) {
   $('.user-name').html('<div>' + data.user.email + '</div>');
   console.log('data is this', data);
   clearModalInput('#sign-in');
+  $('.survey-style').show();
 };
 
 const signInError = function () {
@@ -82,12 +83,15 @@ const signOutSuccess = function () {
   $('#button-signup-nav').show();
   $('#button-signout-nav').hide();
   $('.user-name').hide();
+  clearModalInput('#sign-up');
+  $('.survey-style').hide();
 };
 
 const signOutError = function () {
   $('.message').show();
   $('.message').text('Something went wrong! Try to sign out again.');
   $('#modalSignOut').modal('hide').css('color', 'orange');
+  clearModalInput('#sign-up');
 };
 
 module.exports = {

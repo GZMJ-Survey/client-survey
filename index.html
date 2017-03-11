@@ -2,7 +2,7 @@
 <html>
 
 <head>
-  <title>Example</title>
+  <title>Project Survey</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <!-- Do not add `link` tags unless you know what you are doing -->
@@ -14,7 +14,7 @@
 </head>
 
 <body class="container-fluid">
-  <h1>Client Survey</h1>
+  <h1>Project Survey</h1>
 
   <button id="button-signup-nav"type="button" class="nav-bar btn btn-primary" data-toggle="modal" data-target="#modalSignUp" data-whatever="@mdo">Sign Up</button>
   <button id="button-signin-nav" type="button" class="nav-bar btn btn-primary" data-toggle="modal" data-target="#modalSignIn" data-whatever="@mdo">Sign In</button>
@@ -38,14 +38,14 @@
             <legend>Sign Up</legend>
             <label>
                 <input type="text" placeholder="Email" class="form-control" name="credentials[email]">
-            </label>
+            </label><br>
+            <label>
             <input type="password" placeholder="Password" class="form-control" name="credentials[password]">
+            </label><br>
             <label>
                  <input type="password" placeholder="Password Confirmation" class="form-control" name="credentials[password_confirmation]">
-            </label>
-            <label>
-                <input type="submit" class="style-modalinside-btn form-control button-form" name="submit" value="Sign Up">
-            </label>
+            </label><br>
+                <input type="submit" class="style-modalinside-btn button-form" name="submit" value="Sign Up">
           </fieldset>
         </form>
 
@@ -69,10 +69,10 @@
             <legend>Sign In</legend>
             <label>
                 <input type="text" class="form-control" placeholder="Email" name="credentials[email]">
-            </label>
+            </label><br>
             <label>
                  <input type="password" class="form-control" placeholder="Password" name="credentials[password]">
-            </label>
+            </label><br>
             <input type="submit" class="style-modalinside-btn button-form" name="submit" value="Sign In">
           </fieldset>
         </form>
@@ -115,9 +115,9 @@
           <fieldset>
             <legend>Change Password</legend>
             <label>
-          <input type="password" placeholder="Old Password" class="form-control" name="passwords[old]">
+          <input type="password" placeholder="Old Password" class="form-control" name="passwords[old]"><br>
           <input type="password" placeholder="New Password" class="form-control" name="passwords[new]">
-        </label>
+        </label><br>
             <input type="submit" class="style-modalinside-btn button-form" name="submit" value="Change Password">
           </fieldset>
         </form>
@@ -139,28 +139,32 @@
       <input type="submit" name="submit" value="Submit Answer">
     </fieldset>
   </form> -->
-
-  <form id="survey-create">
+  <div id="wrapper-survey">
+  <div id="image"></div>
+  <div class="survey-style">
+  <form class="style-form" id="survey-create">
     <fieldset>
       <label>
-        <input type="text" name="survey[title]" placeholder="Survey Name">
+        <input class="field-style" type="text" name="survey[title]" placeholder="Survey Name">
       </label>
-      <input type="submit" name="submit" value="Create Survey">
+      <input class="survey-button" type="submit" name="submit" value="Create Survey">
     </fieldset>
   </form>
-  <form id="question-create">
+  <form class="style-form" id="question-create">
     <fieldset>
       <label>
-        <input type="text" id="problem-input" name="survey[questions[problem]]" placeholder="Add Question Here">
-        <input type="text" id="survey-id-input" name="survey[id]" placeholder="Survey ID">
+        <input class="field-style" type="text" name="survey[questions[problem]]" placeholder="Add Question To Survey">
+        <input class="field-style" type="text" name="survey[id]" placeholder="Survey ID">
       </label>
-      <input type="submit" name="submit" value="Add Question">
+      <input class="survey-button" type="submit" name="submit" value="Add Question">
     </fieldset>
   </form>
 
-  <button class="survey-index">Index</button>
+
+  <button class="survey-index create-button">Create</button>
   <div class="index-display"></div>
-
+  </div>
+</div>
 
 </body>
 

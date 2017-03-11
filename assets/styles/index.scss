@@ -8,6 +8,8 @@ $accent-color: #4286f4;
 $accent-hover: #034cc1;
 $button-color: #F44336;
 $button-hover: #E53935;
+$button-survey: #2DB8AC;
+$button-survey-hover: #30C4B7;
 
 @media #{$desktop} {
 
@@ -20,24 +22,62 @@ $button-hover: #E53935;
 }
 
 @media #{$phone} {
+  #wrapper-survey {
+    width: 90%!important;
+  }
 
+  .create-button {
+    margin-top: 20px;
+    margin-left: 0px!important;
+    width: 100%!important;
+    padding: 20px!important;
+  }
+
+  .survey-button {
+    padding-top: 15px;
+    padding-bottom: 15px;
+  }
+
+  input {
+    border: 1px solid lightblue;
+    padding: 10px 3px;
+  }
 
 }
 
+body {
+  font-size: 16px;
+
+}
+
+.container-fluid {
+  margin-left: 10px;
+  margin-right: 10px;
+  padding-left: 0px;
+  padding-right: 0px;
+}
+
+h1 {
+    color: grey;
+    font-weight: 200;
+}
 
 #button-signup-nav {
   background-color: $button-color;
   border-color: transparent;
+  width: 130px;
 }
 
 #button-signin-nav {
   background-color: $button-color;
   border-color: transparent;
+  width: 130px;
 }
 
 #button-signout-nav {
   background-color: $button-color;
   border-color: transparent;
+  width: 130px;
 }
 
 #button-password {
@@ -71,5 +111,82 @@ $button-hover: #E53935;
 }
 
 .style-button-password {
+  display: none;
+}
+
+
+.style-modalinside-btn {
+  background-color: $button-color;
+  border: 3px;
+  border-color: transparent;
+  color: black;
+  height: 35px;
+  padding: 0px 0px;
+  width: 150px;
+}
+
+.style-modalinside-btn:hover {
+  background-color: $button-hover;
+}
+
+#image {
+  background: url('http://janaryndin.com/img/survey.png') no-repeat;
+  background-size: 100% 100%;
+  max-width: 100%;
+  height: 320px;
+  padding-top: 15px;
+}
+
+#wrapper-survey {
+  margin: 0 auto;
+  width: 50%;
+}
+
+input {
+  border: 1px solid lightblue;
+  margin-bottom: 5px;
+  width: 100%;
+
+}
+
+.survey-id {
+  width: 100%;
+}
+
+label {
+  display: block;
+}
+
+.style-form {
+  margin-top: 30px;
+}
+
+.survey-button {
+  background-color: $button-survey;
+  border: 3px;
+  border-color: transparent;
+  color: white;
+}
+
+.create-button {
+  background-color: #FE5517;
+  border: 3px;
+  border-color: transparent;
+  color: white;
+  margin-top: 10px;
+  margin-left: 25%;
+  padding: 10px;
+  width: 50%;
+}
+
+.survey-button:hover {
+  background-color: $button-survey-hover;
+}
+
+.create-button:hover {
+  background-color: #F65216;
+}
+
+.survey-style {
   display: none;
 }
