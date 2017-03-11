@@ -1,15 +1,15 @@
-# [`Entity Relational Diagram`](client-survey-erd.jpg)
 
 # About
 
 This survey team project front end interacts with it's back end (link to back end repo here). The app lets a user have authorization, and have/take surveys.
 
+
 ## Team Members:
 
-Maxime Dore
-Gabrielle Williams
-Zhu Chen
-Jana Ryndin
+-  Maxime Dore
+-  Gabrielle Williams
+-  Zhu Chen
+-  Jana Ryndin
 
 
 ## Tasks
@@ -19,6 +19,7 @@ on a dashboard for that particular survey.
 
 
 ## User Stories
+
 
 ####As a user I want to:
 -   create an account.
