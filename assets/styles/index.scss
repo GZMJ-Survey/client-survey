@@ -47,6 +47,7 @@ $button-survey-hover: #30C4B7;
 
 body {
   font-size: 16px;
+  font-weight: 200;
 
 }
 
@@ -132,9 +133,10 @@ h1 {
 #image {
   background: url('http://janaryndin.com/img/survey.png') no-repeat;
   background-size: 100% 100%;
-  max-width: 100%;
+  max-width: 512px;
   height: 320px;
   padding-top: 15px;
+  margin: 0 auto;
 }
 
 #wrapper-survey {
@@ -174,6 +176,7 @@ label {
   border-color: transparent;
   color: white;
   margin-top: 10px;
+  margin-bottom: 10px;
   margin-left: 25%;
   padding: 10px;
   width: 50%;
@@ -189,4 +192,83 @@ label {
 
 .survey-style {
   display: none;
+}
+
+.survey-show {
+  background-color: #FF9384;
+  border: none;
+  color: white;
+  float: right;
+  text-align: center;
+  margin-top: 10px;
+  padding: 15px 0px;
+}
+
+.survey-show:hover {
+  background-color: #F44336;
+}
+
+.answer-question {
+  border: none;
+  margin-bottom: 50px;
+
+}
+
+.answer-question:hover {
+  background-color: grey;
+  color: #fff;
+}
+
+#surveys-box {
+  padding-bottom: 100px;
+}
+
+.questions-style {
+  background-color: #F5FBFF;
+}
+
+.question-style {
+  font-size: 16px;
+  font-weight: 600;
+  padding-top: 35px;
+  padding-bottom: 15px;
+  padding-left: 10px;
+  background-color: #F5FBFF;
+}
+
+.survey-questions {
+  background-color: #F5FBFF;
+}
+
+.delete-style {
+  border: none;
+  font-weight: 200;
+  margin-bottom: 50px;
+}
+
+.delete-style:hover {
+  background-color: grey;
+  color: #fff;
+}
+
+.box-radios {
+  width: 100%;
+  background-color: #F5FBFF;
+}
+
+.col-1 {
+  width: 50%;
+  float: left;
+  padding-bottom: 35px;
+  background-color: #F5FBFF;
+  padding-left: 10px;
+}
+
+.col-2 {
+  width: 50%;
+  float: left;
+  clear: right;
+  padding-bottom: 35px;
+  background-color: #F5FBFF;
+  padding-left: 10px;
 }

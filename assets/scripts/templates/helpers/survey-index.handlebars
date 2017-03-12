@@ -1,3 +1,4 @@
+<div id="surveys-box">
 {{#each surveys as |survey|}}
 <div class="show-survey" survey-id="{{survey._id}}">
   <form>
@@ -5,16 +6,19 @@
       <input type="button" class="survey-show" value="{{survey.title}}" data-id="{{survey._id}}">
       <label class="survey-contents">
         {{survey.title}}
-        <input type="button" data-id="{{survey._id}}" value="delete survey" class="survey-destroy">
-        <label>
+        <input type="button" data-id="{{survey._id}}" value="Delete Survey" class="survey-destroy delete-style">
+        <label class="questions-style">
           {{#each survey.questions as |question|}}
           <div class="survey-questions">
-            <div class="survey-problem">{{question.problem}}</div>
+            <div class="survey-problem question-style">{{question.problem}}</div>
           </div>
           <input class="survey-id" value="{{survey._id}}" style="display: none;">
+
           <input class="survey-problem-id" value="{{question._id}}" style="display: none;">
-          <input type="radio" name="{{question.id}}" value=true data-bind="checked:IsChecked, checkedValue: true"/>Yes
-          <input type="radio" name="{{question.id}}" value=false data-bind="checked:IsChecked, checkedValue: true"/>No
+          <div class="box-radios">
+          <div class="col-1"><input type="radio" name="{{question.id}}" value=true data-bind="checked:IsChecked, checkedValue: true"/>Yes</div>
+          <div class="col-2"><input type="radio" name="{{question.id}}" value=false data-bind="checked:IsChecked, checkedValue: true"/>No</div>
+          </div>
           {{/each}}
         </label>
     </label>
