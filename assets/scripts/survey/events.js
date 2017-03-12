@@ -69,7 +69,7 @@ const onUpdateSurveyQuestion = function(event) {
   api.updateSurveyQuestion(data)
     .then(onSurveyIndex)
     .then(ui.successQuestionCreate)
-    .catch(ui.failureSurveyCreate);
+    .catch(ui.failureQuestionCreate);
 };
 
 const onAnswer = function(event) {
@@ -118,7 +118,7 @@ const onDestroy = function (event) {
 const addHandlers = () => {
   $('.survey-index').on('click', onSurveyIndex);
   $('#survey-create').on('submit', onSurveyCreate);
-  $('#question-create').on('submit', onUpdateSurveyQuestion);
+  $('.index-display').on('submit', $('.question-create').val(), onUpdateSurveyQuestion);
   $('.index-display').on('click', '.answer-question', onAnswer);
   $('.index-display').on('click', '.survey-destroy', onDestroy);
   $('.index-display').on('click', '.survey-show', onSurveyShow);

@@ -38,6 +38,11 @@ const successQuestionCreate = (data) => {
 
 };
 
+const failureQuestionCreate = (error) => {
+  console.log(error);
+  $('.alerts').text('Invalid User');
+};
+
 const successAnswer = (data) => {
   console.log("surveyStore is", surveyStore);
   console.log("store is", data);
@@ -65,6 +70,7 @@ module.exports = {
   successSurveyCreate,
   failureSurveyCreate,
   successQuestionCreate,
+  failureQuestionCreate,
   successAnswer,
   failureAnswer,
   successDestroy,
