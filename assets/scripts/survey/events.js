@@ -17,30 +17,25 @@ const onSurveyIndex = function(event) {
 
 const onSurveyShow = function (event) {
   event.preventDefault();
-  console.log("this is ", $(this));
-
   let id = $(event.target).data("id");
-
   api.surveyShow(id)
-  .then(()=>{
-    $('.survey-show').on('click', function() {
-      let clicked = $(this);
-      if (clicked.hasClass('open')) {
-        clicked.removeClass('open');
-        clicked.next('.survey-contents').stop().slideUp(500);
-        clicked.find('.fa').removeClass('fa-chevron-up').addClass('fa-chevron-down');
-      } else {
-        let open = $('.survey-show.open');
-        open.next('.survey-contents').slideUp(500);
-        open.find('.fa').removeClass('fa-chevron-up').addClass('fa-chevron-down');
-        open.removeClass('open');
-        clicked.addClass('open');
-        clicked.next('.survey-contents').stop().slideDown(500);
-        clicked.find('.fa').addClass('fa-chevron-up').removeClass('fa-chevron-down');
-      }
-   });
-
-  });
+  .then(()=> {
+    let clicked = $(this);
+    if (clicked.hasClass('open')) {
+      clicked.removeClass('open');
+      clicked.next('.survey-contents').stop().slideUp(500);
+      clicked.find('.fa').removeClass('fa-chevron-up').addClass('fa-chevron-down');
+    } else {
+      let open = $('.survey-show.open');
+      open.next('.survey-contents').slideUp(500);
+      open.find('.fa').removeClass('fa-chevron-up').addClass('fa-chevron-down');
+      open.removeClass('open');
+      clicked.addClass('open');
+      clicked.next('.survey-contents').stop().slideDown(500);
+      clicked.find('.fa').addClass('fa-chevron-up').removeClass('fa-chevron-down');
+    }
+  })
+  ;
 };
 
 const onSurveyCreate = function(event) {
