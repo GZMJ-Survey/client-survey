@@ -88,6 +88,8 @@ const signOutSuccess = function () {
   $('.user-name').hide();
   clearModalInput('#sign-up');
   $('.survey-style').hide();
+  $('.alerts').empty();
+  $('.survey-alerts').empty();
 };
 
 const signOutError = function () {
