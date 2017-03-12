@@ -2,7 +2,10 @@
 const surveyStore = require('../surveyStore');
 const store = require('../store');
 const surveyIndexHandlerbars = require('../templates/helpers/survey-index.handlebars');
-// const events = require('./events');
+
+const api = require('./api.js');
+
+
 
 const successIndex = (data) => {
   $('.survey-alerts').text('The Number of Surveys is ' + data.surveys.length);
@@ -53,9 +56,14 @@ const failureAnswer = (error) => {
   console.log(error);
 };
 
-const successDestroy = (data) => {
-  console.log(data);
-  $('.alerts').text('Deleted Survey');
+
+
+const successDestroy = () => {
+  // api.surveyIndex()
+  // .then(successIndex)
+  // .catch(failureIndex)
+  // ;
+
 };
 
 const failureDestroy = (error) => {
