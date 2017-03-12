@@ -2,6 +2,7 @@
 const surveyStore = require('../surveyStore');
 const store = require('../store');
 const surveyIndexHandlerbars = require('../templates/helpers/survey-index.handlebars');
+// const events = require('./events');
 
 const successIndex = (data) => {
   $('.survey-alerts').text('The Number of Surveys is ' + data.surveys.length);
@@ -33,6 +34,7 @@ const successQuestionCreate = (data) => {
   console.log(data);
   $('.survey-alerts').text('Added Question to Survey');
   $('#question-create')[0].reset();
+  // events.onSurveyIndex(data);
 
 };
 

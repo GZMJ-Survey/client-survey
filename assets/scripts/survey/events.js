@@ -7,7 +7,9 @@ const store = require('../store');
 const surveyStore = require('../surveyStore');
 
 const onSurveyIndex = function(event) {
-  event.preventDefault();
+  if (event && event.preventDefault) {
+    event.preventDefault();
+  }
   api.surveyIndex()
 
     .then(ui.successIndex)
@@ -48,6 +50,7 @@ const onSurveyCreate = function(event) {
       return store;
     })
     .then(ui.successSurveyCreate)
+    .then(onSurveyIndex)
     .catch(ui.failureSurveyCreate);
 
     $('.create-button').on('click', function(){
@@ -59,12 +62,12 @@ const onUpdateSurveyQuestion = function(event) {
   if (event && event.preventDefault) {
     event.preventDefault();
   }
-
   console.log("this is", $('#problem-input').val());
   console.log("this is", $('#survey-id-input').val());
   let data = getFormFields(event.target);
 
   api.updateSurveyQuestion(data)
+    .then(onSurveyIndex)
     .then(ui.successQuestionCreate)
     .catch(ui.failureSurveyCreate);
 };
@@ -107,6 +110,7 @@ const onDestroy = function (event) {
   // console.log("id is ", id);
 
   api.destroySurvey(id)
+  .then(onSurveyIndex)
     .then(ui.successDestroy)
     .catch(ui.failureDestroy);
 };
@@ -123,4 +127,5 @@ const addHandlers = () => {
 
 module.exports = {
   addHandlers,
+  onSurveyIndex,
 };
