@@ -49,6 +49,10 @@ const onSurveyCreate = function(event) {
     })
     .then(ui.successSurveyCreate)
     .catch(ui.failureSurveyCreate);
+
+    $('.create-button').on('click', function(){
+      $('.field-style').val('');
+    });
 };
 
 const onUpdateSurveyQuestion = function(event) {
