@@ -56,7 +56,9 @@ const onSurveyCreate = function(event) {
 };
 
 const onUpdateSurveyQuestion = function(event) {
-  event.preventDefault();
+  if (event && event.preventDefault) {
+    event.preventDefault();
+  }
 
   console.log("this is", $('#problem-input').val());
   console.log("this is", $('#survey-id-input').val());
@@ -91,7 +93,6 @@ const onAnswer = function(event) {
     }
 
   };
-
     api.updateAnswer(data, $('.answer-question').data("id"))
     .then((response)=>console.log(response))
     .catch((error)=>console.error(error))

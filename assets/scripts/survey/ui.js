@@ -1,9 +1,11 @@
 'use strict';
 const surveyStore = require('../surveyStore');
+const store = require('../store');
 const surveyIndexHandlerbars = require('../templates/helpers/survey-index.handlebars');
 
 const successIndex = (data) => {
-  console.log(data);
+  $('.survey-alerts').text('The Number of Surveys is ' + data.surveys.length);
+  console.log("the number of surveys is", data.surveys.length);
   surveyStore.length=data.surveys[0].questions.length;
   let surveyHtml = surveyIndexHandlerbars({ surveys: data.surveys });
   $('.index-display').html(surveyHtml);
@@ -17,18 +19,27 @@ const failureIndex = (error) => {
 
 const successSurveyCreate = (data) => {
   console.log(data);
+  // console.log(data;
+  $('#survey-create')[0].reset();
+  $('.survey-alerts').text('Created New Survey!');
 };
 
 const failureSurveyCreate = (error) => {
   console.log(error);
+  $('.survey-alerts').text('Survey name has already been created, choose new name');
 };
 
 const successQuestionCreate = (data) => {
   console.log(data);
+  $('.survey-alerts').text('Added Question to Survey');
+  $('#question-create')[0].reset();
+
 };
 
 const successAnswer = (data) => {
-  console.log(data);
+  console.log("surveyStore is", surveyStore);
+  console.log("store is", data);
+  $('.survey-alerts').text('Survey Answers Submitted');
 };
 
 const failureAnswer = (error) => {
@@ -37,10 +48,12 @@ const failureAnswer = (error) => {
 
 const successDestroy = (data) => {
   console.log(data);
+  $('.survey-alerts').text('Deleted Survey');
 };
 
 const failureDestroy = (error) => {
   console.log(error);
+  $('.survey-alerts').text('Invalid User');
 };
 
 

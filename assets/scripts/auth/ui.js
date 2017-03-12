@@ -26,7 +26,7 @@ const signUpSuccess = function () {
   $('.message').hide(10000);
   clearModalInput('#sign-up');
   $('#modalSignUp #sign-up').html();
-  $('#button-signup-nav').hide();
+  // $('#button-signup-nav').hide();
 };
 
 const signUpError = function () {
@@ -65,6 +65,7 @@ const changePasswordSuccess = function () {
   $('.message').text('Your password has changed!').css('color', 'blue');
   $('#modalChangePassword').modal('hide');
   $('.message').hide(10000);
+  clearModalInput('#change-password');
 };
 
 const changePasswordError = function () {

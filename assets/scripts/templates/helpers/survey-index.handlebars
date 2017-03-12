@@ -1,11 +1,13 @@
 <div id="surveys-box">
 {{#each surveys as |survey|}}
-<div class="show-survey" survey-id="{{survey._id}}">
+<div class="show-survey" survey-id="{{survey._id}}" author-id={{user.id}}>
   <form>
     <fieldset>
       <input type="button" class="survey-show" value="{{survey.title}}" data-id="{{survey._id}}">
       <label class="survey-contents">
         {{survey.title}}
+        <br>
+        Survey ID: {{survey._id}}
         <input type="button" data-id="{{survey._id}}" value="Delete Survey" class="survey-destroy delete-style">
         <label class="questions-style">
           {{#each survey.questions as |question|}}
