@@ -1,5 +1,6 @@
 'use strict';
 // const store = require('../store');
+const surveyEvents = require('../survey/events');
 
 const success = (data) => {
   if (data) {
@@ -51,6 +52,7 @@ const signInSuccess = function (data) {
   console.log('data is this', data);
   clearModalInput('#sign-in');
   $('.survey-style').show();
+  surveyEvents.onSurveyIndex();
 };
 
 const signInError = function () {
