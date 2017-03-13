@@ -25,6 +25,15 @@ const onSurveyShow = function (event) {
     if (response.survey.questions[0] !== undefined){
       $('.survey-alerts').text("Survey, " + response.survey.title + ", has been used " + response.survey.questions[0].answers.length + " times.");
     }
+
+    if (store.user.id != response.survey._owner){
+      $('#question-create').hide();
+      $('.survey-destroy').hide();
+    } else {
+      $('#question-create').show();
+      $('.survey-destroy').show();
+    }
+
     let clicked = $(this);
     if (clicked.hasClass('open')) {
       clicked.removeClass('open');
