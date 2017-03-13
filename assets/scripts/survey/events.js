@@ -90,11 +90,13 @@ const onAnswer = function(event) {
   event.preventDefault();
 
   let size = 0;
+
   for(let i=0; i<surveyStore.survey.length; i++){
     if (surveyStore.survey[i].id === $(this).data("id")){
-      size = i+1;
+      size = surveyStore.survey[i].questions.length;
     }
   }
+
   let problems = [];
   for (let i = 0; i < size; i++) {
     let result = {};
