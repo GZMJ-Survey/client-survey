@@ -115,6 +115,7 @@ const onAnswer = function(event) {
   event.preventDefault();
 
   let size = 0;
+
   let specificSurvey;
   for(let i=0; i<surveyStore.survey.length; i++){
     if (surveyStore.survey[i].id === $(this).data("id")){
@@ -122,7 +123,6 @@ const onAnswer = function(event) {
       specificSurvey = surveyStore.survey[i];
     }
   }
-
 
   let problems = [];
   for (let i = 0; i < size; i++) {
