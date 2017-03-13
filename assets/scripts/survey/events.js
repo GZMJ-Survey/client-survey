@@ -88,13 +88,15 @@ const onUpdateSurveyQuestion = function(event) {
 
 const onAnswer = function(event) {
   event.preventDefault();
-  console.log(surveyStore.length);
 
-  console.log('this is the survey problem id', $('.survey-problem-id')[0].value);
-  console.log('this is the survey id', $('.survey-id')[0].value);
-
+  let size = 0;
+  for(let i=0; i<surveyStore.survey.length; i++){
+    if (surveyStore.survey[i].id === $(this).data("id")){
+      size = i+1;
+    }
+  }
   let problems = [];
-  for (let i = 0; i < surveyStore.length; i++) {
+  for (let i = 0; i < size; i++) {
     let result = {};
     result = {
      answers: {
@@ -110,7 +112,7 @@ const onAnswer = function(event) {
     }
 
   };
-    api.updateAnswer(data, $('.answer-question').data("id"))
+    api.updateAnswer(data, $(this).data("id"))
     .then((response)=>console.log(response))
     .catch((error)=>console.error(error))
     .then(ui.successAnswer)
