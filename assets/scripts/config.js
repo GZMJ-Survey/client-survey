@@ -2,7 +2,7 @@
 
 const config = {
   apiOrigins: {
-    production: 'https://safe-citadel-54247.herokuapp.com',
+    production: 'https://warm-lowlands-81129.herokuapp.com',
     development: 'http://localhost:4741',
   },
 };
