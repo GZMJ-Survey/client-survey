@@ -37,7 +37,7 @@ on a dashboard for that particular survey.
 
 ## Wireframe
 
-![Wireframe](put raw path here "Wireframe")
+![Wireframe](wireframe.jpg "Wireframe")
 
 ## Development
 
