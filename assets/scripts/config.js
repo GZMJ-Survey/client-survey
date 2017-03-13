@@ -2,7 +2,7 @@
 
 const config = {
   apiOrigins: {
-    production: 'https://warm-lowlands-81129.herokuapp.com',
+    production: 'https://murmuring-meadow-73234.herokuapp.com',
     development: 'http://localhost:4741',
   },
 };
