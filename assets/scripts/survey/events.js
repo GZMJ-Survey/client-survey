@@ -26,7 +26,7 @@ const onSurveyShow = function (event) {
       $('.survey-alerts').text("Survey, " + response.survey.title + ", has been used " + response.survey.questions[0].answers.length + " times.");
     }
 
-    if (store.user.id != response.survey._owner){
+    if (store.user.id !== response.survey._owner){
       $('.add-question-form').hide();
       $('.survey-destroy').hide();
     } else {
@@ -112,6 +112,7 @@ const onAnswer = function(event) {
     .then((response)=>console.log(response))
     .catch((error)=>console.error(error))
     .then(ui.successAnswer)
+    .then(onSurveyIndex)
     .catch(ui.failureAnswer);
 };
 

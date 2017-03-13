@@ -7,7 +7,7 @@ const api = require('./api.js');
 
 
 const successIndex = (data) => {
-  $('.survey-alerts').text('The Number of Surveys is ' + data.surveys.length);
+  // $('.survey-alerts').text('The Number of Surveys is ' + data.surveys.length);
   console.log("the number of surveys is", data.surveys);
   surveyStore.length=data.surveys[0].questions.length;
   let surveyHtml = surveyIndexHandlerbars({ surveys: data.surveys });
