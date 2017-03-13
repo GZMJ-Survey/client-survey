@@ -52,6 +52,7 @@ const updateAnswer = function (data, id) {
     method: 'PATCH',
     headers: {
       Authorization: `Token token=${store.user.token}`,
+
     },
     data,
   });
