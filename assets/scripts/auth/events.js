@@ -20,9 +20,9 @@ const onSignUp = function(event) {
 
 const onSignIn = function(event) {
   event.preventDefault();
-  console.log('event.target is ', event.target);
+  // console.log('event.target is ', event.target);
   let data = getFormFields(event.target);
-  console.log(data);
+  // console.log(data);
   api.signIn(data)
     .then((response) => {
       store.user = response.user;

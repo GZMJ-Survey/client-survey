@@ -60,7 +60,7 @@ const onSurveyCreate = function(event) {
   api.surveyCreate(data)
     .then((response) => {
       store.surveyid = response.survey.id;
-      console.log(store.surveyid);
+      // console.log(store.surveyid);
       return store;
     })
     .then(ui.successSurveyCreate)
@@ -76,8 +76,8 @@ const onUpdateSurveyQuestion = function(event) {
   if (event && event.preventDefault) {
     event.preventDefault();
   }
-  console.log("this is", $('#problem-input').val());
-  console.log("this is", $('#survey-id-input').val());
+  // console.log("this is", $('#problem-input').val());
+  // console.log("this is", $('#survey-id-input').val());
   let data = getFormFields(event.target);
 
   api.updateSurveyQuestion(data)
@@ -113,8 +113,8 @@ const onAnswer = function(event) {
 
   };
     api.updateAnswer(data, $(this).data("id"))
-    .then((response)=>console.log(response))
-    .catch((error)=>console.error(error))
+    // .then((response)=>// console.log(response))
+    // .catch((error)=>// console.error(error))
     .then(ui.successAnswer)
     .then(onSurveyIndex)
     .catch(ui.failureAnswer);

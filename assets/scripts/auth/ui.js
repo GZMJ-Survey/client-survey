@@ -5,14 +5,14 @@ const surveyEvents = require('../survey/events');
 const success = (data) => {
   if (data) {
   // handle success
-  console.log(data);
+  // console.log(data);
   $('.message').text('Success!');
   }
 };
 
 const failure = (error) => {
   // handle failure
-  console.error(error);
+  // console.error(error);
   $('.message').text('Error!');
 };
 
@@ -49,7 +49,7 @@ const signInSuccess = function (data) {
   $('.style-button-password').show();
   $('.style-button-signout').show();
   $('.user-name').html('<div>' + data.user.email + '</div>');
-  console.log('data is this', data);
+  // console.log('data is this', data);
   clearModalInput('#sign-in');
   $('.survey-style').show();
   surveyEvents.onSurveyIndex();

@@ -46,7 +46,7 @@ const updateSurveyQuestion = function (data) {
 };
 
 const updateAnswer = function (data, id) {
-  console.log(data);
+  // console.log(data);
   return $.ajax({
     url: config.apiOrigin + '/surveys/' + id,
     method: 'PATCH',
