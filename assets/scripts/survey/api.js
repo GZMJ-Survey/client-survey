@@ -40,6 +40,7 @@ const updateSurveyQuestion = function (data) {
     method: 'PATCH',
     headers: {
       Authorization: `Token token=${store.user.token}`,
+      'Access-Control-Allow-Origin': '*',
     },
     data,
   });
