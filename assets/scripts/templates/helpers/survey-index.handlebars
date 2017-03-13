@@ -2,8 +2,11 @@
 {{#each surveys as |survey|}}
 <div class="show-survey" survey-id="{{survey._id}}" author-id={{user.id}}>
       <input type="button" class="survey-show" value="{{survey.title}}" data-id="{{survey._id}}">
+
       <label class="survey-contents">
         {{survey.title}}
+          <h3></h3>
+        <h3 class="answer-length"></h3>
         <form class="style-form" id="question-create">
           <fieldset>
             <label>

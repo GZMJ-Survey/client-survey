@@ -21,7 +21,11 @@ const onSurveyShow = function (event) {
   event.preventDefault();
   let id = $(event.target).data("id");
   api.surveyShow(id)
-  .then(()=> {
+  .then((response)=> {
+    if (response.survey.questions[0] !== undefined){
+      console.log(response.survey.questions[0].answers.length);
+      $('.survey-alerts').text("This Survey has been used " + response.survey.questions[0].answers.length + " times.");
+    }
     let clicked = $(this);
     if (clicked.hasClass('open')) {
       clicked.removeClass('open');

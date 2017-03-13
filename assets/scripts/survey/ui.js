@@ -2,14 +2,13 @@
 const surveyStore = require('../surveyStore');
 const store = require('../store');
 const surveyIndexHandlerbars = require('../templates/helpers/survey-index.handlebars');
-
 const api = require('./api.js');
 
 
 
 const successIndex = (data) => {
   $('.survey-alerts').text('The Number of Surveys is ' + data.surveys.length);
-  console.log("the number of surveys is", data.surveys.length);
+  console.log("the number of surveys is", data.surveys);
   surveyStore.length=data.surveys[0].questions.length;
   let surveyHtml = surveyIndexHandlerbars({ surveys: data.surveys });
   $('.index-display').html(surveyHtml);
