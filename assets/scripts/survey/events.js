@@ -29,9 +29,11 @@ const onSurveyShow = function (event) {
     if (store.user.id !== response.survey._owner){
       $('.add-question-form').hide();
       $('.survey-destroy').hide();
+      $('.answer-question').show();
     } else {
       $('.add-question-form').show();
       $('.survey-destroy').show();
+      $('.answer-question').hide();
     }
 
     let clicked = $(this);
