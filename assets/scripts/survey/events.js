@@ -27,10 +27,10 @@ const onSurveyShow = function (event) {
     }
 
     if (store.user.id != response.survey._owner){
-      $('#question-create').hide();
+      $('.add-question-form').hide();
       $('.survey-destroy').hide();
     } else {
-      $('#question-create').show();
+      $('.add-question-form').show();
       $('.survey-destroy').show();
     }
 
