@@ -21,6 +21,12 @@ const onSurveyShow = function (event) {
   api.surveyShow(id)
   .then((response)=> {
     let survey= response.survey;
+
+    //show user message if no questions in survey
+    survey.questions.length===0?
+    $('.empty-survey').text("There are currently no questions in this survey.")
+    :$('.empty-survey').empty();
+
     let yesAnswers;
     let noAnswers;
 
@@ -48,6 +54,7 @@ const onSurveyShow = function (event) {
       $('.answer-question').show();
       $('.col-1-radio').show();
       $('.col-2-radio').show();
+      survey.questions.length===0? $('.answer-question').hide() : $('.answer-question').show();
     } else {
       $('.add-question-form').show();
       $('.survey-destroy').show();
