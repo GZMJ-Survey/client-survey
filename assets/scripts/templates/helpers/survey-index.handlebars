@@ -30,8 +30,14 @@
 
           <input class="survey-problem-id" value="{{question._id}}" style="display: none;">
           <div class="box-radios">
-          <div class="col-1"><input type="radio" name="{{question.id}}" value=true data-bind="checked:IsChecked, checkedValue: true"/>Yes</div>
-          <div class="col-2"><input type="radio" name="{{question.id}}" value=false data-bind="checked:IsChecked, checkedValue: true"/>No</div>
+          <div class="col-1"><input type="radio" class="col-1-radio" name="{{question.id}}" value=true data-bind="checked:IsChecked, checkedValue: true"/>
+            Yes
+            <div class="count-true" name="{{question.id}}"></div>
+          </div>
+          <div class="col-2"><input type="radio" class="col-2-radio" name="{{question.id}}" value=false data-bind="checked:IsChecked, checkedValue: true"/>
+            No
+            <div class="count-false" name="{{question.id}}"></div>
+          </div>
           </div>
           {{/each}}
         </label>
