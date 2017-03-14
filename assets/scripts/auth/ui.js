@@ -24,7 +24,7 @@ const signUpSuccess = function () {
   $('.message').show();
   $('.message').text('Thank you for signing up! Now sign in!').css('color', 'blue');
   $('#modalSignUp').modal('hide');
-  $('.message').hide(10000);
+  // $('.message').hide(10000);
   clearModalInput('#sign-up');
   $('#modalSignUp #sign-up').html();
   // $('#button-signup-nav').hide();
@@ -40,8 +40,8 @@ const signUpError = function () {
 
 const signInSuccess = function (data) {
   $('.message').show();
-  $('.message').text('You are Successfully signed in!').css('color', 'blue');
-  $('.message').hide(10000);
+  // $('.message').text('You are Successfully signed in!').css('color', 'blue');
+  $('.message').hide();
   $('#modalSignIn').modal('hide');
   $('#button-signin-nav .modal-body').empty();
   $('#button-signin-nav').hide();
@@ -66,7 +66,7 @@ const changePasswordSuccess = function () {
   $('.message').show();
   $('.message').text('Your password has changed!').css('color', 'blue');
   $('#modalChangePassword').modal('hide');
-  $('.message').hide(10000);
+  // $('.message').hide(10000);
   clearModalInput('#change-password');
 };
 
@@ -80,7 +80,7 @@ const signOutSuccess = function () {
   $('.message').show();
   $('.message').text('You have successfully signed out!');
   $('#modalSignOut').modal('hide').css('color', 'blue');
-  $('.message').hide(10000);
+  // $('.message').hide(10000);
   $('.style-button-password').hide();
   $('#button-signin-nav').show();
   $('#button-signup-nav').show();
