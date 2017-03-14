@@ -11,10 +11,8 @@ const onSurveyIndex = function(event) {
     event.preventDefault();
   }
   api.surveyIndex()
-
     .then(ui.successIndex)
     .catch(ui.failureIndex);
-
 };
 
 const onSurveyShow = function (event) {
@@ -22,6 +20,24 @@ const onSurveyShow = function (event) {
   let id = $(event.target).data("id");
   api.surveyShow(id)
   .then((response)=> {
+    let survey= response.survey;
+    let yesAnswers;
+    let noAnswers;
+
+    for(let k=0; k<survey.questions.length; k++){
+      yesAnswers=0;
+      noAnswers=0;
+      for(let i=0; i<survey.questions[k].answers.length;i++){
+        if (survey.questions[k].answers[i].response === true){
+          yesAnswers++;
+        } else {
+          noAnswers++;
+        }
+      }
+      $(`.count-true[name=${survey.questions[k].id}]`).text(`Voted: ${yesAnswers} times`);
+      $(`.count-false[name=${survey.questions[k].id}]`).text(`Voted: ${noAnswers} times`);
+    }
+
     if (response.survey.questions[0] !== undefined){
       $('.survey-alerts').text("Survey, " + response.survey.title + ", has been used " + response.survey.questions[0].answers.length + " times.");
     }
@@ -30,10 +46,14 @@ const onSurveyShow = function (event) {
       $('.add-question-form').hide();
       $('.survey-destroy').hide();
       $('.answer-question').show();
+      $('.col-1-radio').show();
+      $('.col-2-radio').show();
     } else {
       $('.add-question-form').show();
       $('.survey-destroy').show();
       $('.answer-question').hide();
+      $('.col-1-radio').hide();
+      $('.col-2-radio').hide();
     }
 
     let clicked = $(this);
@@ -60,7 +80,6 @@ const onSurveyCreate = function(event) {
   api.surveyCreate(data)
     .then((response) => {
       store.surveyid = response.survey.id;
-      // console.log(store.surveyid);
       return store;
     })
     .then(ui.successSurveyCreate)
@@ -76,8 +95,7 @@ const onUpdateSurveyQuestion = function(event) {
   if (event && event.preventDefault) {
     event.preventDefault();
   }
-  // console.log("this is", $('#problem-input').val());
-  // console.log("this is", $('#survey-id-input').val());
+
   let data = getFormFields(event.target);
 
   api.updateSurveyQuestion(data)
@@ -90,19 +108,24 @@ const onAnswer = function(event) {
   event.preventDefault();
 
   let size = 0;
-
+  let specificSurvey;
   for(let i=0; i<surveyStore.survey.length; i++){
     if (surveyStore.survey[i].id === $(this).data("id")){
       size = surveyStore.survey[i].questions.length;
+      specificSurvey = surveyStore.survey[i];
     }
   }
 
+
   let problems = [];
   for (let i = 0; i < size; i++) {
+
+    let id = specificSurvey.questions[i].id;
+
     let result = {};
     result = {
      answers: {
-      response: true
+      response: $(`input:radio[name=${id}]:checked`).val() || false
      }
     };
     problems.push(result);
@@ -114,9 +137,9 @@ const onAnswer = function(event) {
     }
 
   };
+
+
     api.updateAnswer(data, $(this).data("id"))
-    // .then((response)=>// console.log(response))
-    // .catch((error)=>// console.error(error))
     .then(ui.successAnswer)
     .then(onSurveyIndex)
     .catch(ui.failureAnswer);
@@ -126,7 +149,6 @@ const onDestroy = function (event) {
   event.preventDefault();
 
   let id = $(event.target).data('id');
-  // console.log("id is ", id);
 
   api.destroySurvey(id)
   .then(onSurveyIndex)
