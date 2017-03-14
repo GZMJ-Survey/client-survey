@@ -21,12 +21,15 @@ const onSurveyShow = function (event) {
   api.surveyShow(id)
   .then((response)=> {
     let survey= response.survey;
+<<<<<<< HEAD
 
     //show user message if no questions in survey
     survey.questions.length===0?
     $('.empty-survey').text("There are currently no questions in this survey.")
     :$('.empty-survey').empty();
 
+=======
+>>>>>>> Implement poll statistic
     let yesAnswers;
     let noAnswers;
 
@@ -54,7 +57,10 @@ const onSurveyShow = function (event) {
       $('.answer-question').show();
       $('.col-1-radio').show();
       $('.col-2-radio').show();
+<<<<<<< HEAD
       survey.questions.length===0? $('.answer-question').hide() : $('.answer-question').show();
+=======
+>>>>>>> Implement poll statistic
     } else {
       $('.add-question-form').show();
       $('.survey-destroy').show();
@@ -115,7 +121,6 @@ const onAnswer = function(event) {
   event.preventDefault();
 
   let size = 0;
-
   let specificSurvey;
   for(let i=0; i<surveyStore.survey.length; i++){
     if (surveyStore.survey[i].id === $(this).data("id")){
@@ -123,6 +128,7 @@ const onAnswer = function(event) {
       specificSurvey = surveyStore.survey[i];
     }
   }
+
 
   let problems = [];
   for (let i = 0; i < size; i++) {
