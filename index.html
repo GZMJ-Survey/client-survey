@@ -39,7 +39,7 @@
           <fieldset>
             <legend>Sign Up</legend>
             <label>
-                <input type="text" placeholder="Email" class="form-control" name="credentials[email]">
+                <input type="email" placeholder="Email" class="form-control" name="credentials[email]">
             </label><br>
             <label>
             <input type="password" placeholder="Password" class="form-control" name="credentials[password]">
@@ -70,7 +70,7 @@
           <fieldset>
             <legend>Sign In</legend>
             <label>
-                <input type="text" class="form-control" placeholder="Email" name="credentials[email]">
+                <input type="email" class="form-control" placeholder="Email" name="credentials[email]">
             </label><br>
             <label>
                  <input type="password" class="form-control" placeholder="Password" name="credentials[password]">
@@ -142,34 +142,21 @@
     </fieldset>
   </form> -->
   <div id="wrapper-survey">
-  <div id="image"></div>
-  <div class="survey-style">
-  <form class="style-form" id="survey-create">
-    <fieldset>
-      <label>
-        <input class="field-style" type="text" name="survey[title]" placeholder="Survey Name">
-      </label>
-      <input class="survey-button" type="submit" name="submit" value="Create Survey">
-    </fieldset>
-  </form>
-  <!-- <form class="style-form" id="question-create">
-    <fieldset>
-      <label>
-        <input class="field-style" type="text" name="survey[questions[problem]]" placeholder="Add Question To Survey">
-        <input class="field-style" type="text" name="survey[id]" placeholder="Survey ID">
-      </label>
-      <input class="survey-button" type="submit" name="submit" value="Add Question">
-    </fieldset>
-  </form> -->
-  <br>
-  <br>
-
-
-  <!-- <button type="button" class="survey-index create-button">All Surveys</button> -->
-  <div class="index-display"></div>
+    <div id="image"></div>
+    <div class="survey-style">
+      <form class="style-form" id="survey-create">
+        <fieldset>
+          <label>
+            <input class="field-style" type="text" name="survey[title]" placeholder="Survey Name">
+          </label>
+          <input class="survey-button" type="submit" name="submit" value="Create Survey">
+        </fieldset>
+      </form>
+       <br>
+       <br>
+    <div class="index-display"></div>
+    </div>
   </div>
-</div>
-
 </body>
 
 </html>

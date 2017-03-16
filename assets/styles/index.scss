@@ -11,16 +11,6 @@ $button-hover: #E53935;
 $button-survey: #2DB8AC;
 $button-survey-hover: #30C4B7;
 
-@media #{$desktop} {
-
-
-}
-
-@media #{$tablet} {
-
-
-}
-
 @media #{$phone} {
   #wrapper-survey {
     width: 90%!important;
@@ -115,7 +105,6 @@ h1 {
   display: none;
 }
 
-
 .style-modalinside-btn {
   background-color: $button-color;
   border: 3px;
@@ -131,7 +120,7 @@ h1 {
 }
 
 #image {
-  background: url('http://janaryndin.com/img/survey.png') no-repeat;
+  background: url('https://raw.githubusercontent.com/GZMJ-Survey/client-survey/master/assets/survey.png') no-repeat;
   background-size: 100% 100%;
   max-width: 512px;
   height: 320px;
