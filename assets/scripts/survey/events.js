@@ -54,6 +54,7 @@ const onSurveyShow = function (event) {
       $('.col-1-radio').show();
       $('.col-2-radio').show();
       survey.questions.length===0? $('.answer-question').hide() : $('.answer-question').show();
+
     } else {
       $('.add-question-form').show();
       $('.survey-destroy').show();
@@ -122,7 +123,6 @@ const onAnswer = function(event) {
     }
   }
 
-
 let counter = 0;
   let problems = [];
   for (let i = 0; i < size; i++) {
@@ -147,7 +147,6 @@ let counter = 0;
         questions: problems
       }
     };
-
     api.updateAnswer(data, $(this).data("id"))
     .then(ui.successAnswer)
     .then(onSurveyIndex)
