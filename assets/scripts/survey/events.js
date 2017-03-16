@@ -21,10 +21,6 @@ const onSurveyShow = function (event) {
   api.surveyShow(id)
   .then((response)=> {
     let survey= response.survey;
-<<<<<<< HEAD
-
-=======
->>>>>>> zhu140
     //show user message if no questions in survey
     survey.questions.length===0?
     $('.empty-survey').text("There are currently no questions in this survey.")
@@ -58,10 +54,6 @@ const onSurveyShow = function (event) {
       $('.col-1-radio').show();
       $('.col-2-radio').show();
       survey.questions.length===0? $('.answer-question').hide() : $('.answer-question').show();
-<<<<<<< HEAD
-=======
-
->>>>>>> zhu140
     } else {
       $('.add-question-form').show();
       $('.survey-destroy').show();
@@ -155,6 +147,7 @@ let counter = 0;
         questions: problems
       }
     };
+
     api.updateAnswer(data, $(this).data("id"))
     .then(ui.successAnswer)
     .then(onSurveyIndex)
