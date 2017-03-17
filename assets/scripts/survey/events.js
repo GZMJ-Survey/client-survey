@@ -26,6 +26,8 @@ const onSurveyShow = function (event) {
     $('.empty-survey').text("There are currently no questions in this survey.")
     :$('.empty-survey').empty();
 
+    $('.submission-error').empty();
+
     let yesAnswers;
     let noAnswers;
 
@@ -152,7 +154,7 @@ let counter = 0;
     .then(onSurveyIndex)
     .catch(ui.failureAnswer);
   } else {
-    $('h1').text("Please answer all questions!");
+    $('.submission-error').text("Please answer all questions!");
   }
 };
 

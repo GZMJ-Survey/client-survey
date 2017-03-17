@@ -47,6 +47,7 @@ const signInSuccess = function (data) {
   clearModalInput('#sign-in');
   $('.survey-style').show();
   surveyEvents.onSurveyIndex();
+  $('.user-name').show();
 };
 
 const signInError = function () {
@@ -84,6 +85,7 @@ const signOutSuccess = function () {
   $('.survey-style').hide();
   $('.alerts').empty();
   $('.survey-alerts').empty();
+  clearModalInput('#change-password');
 };
 
 const signOutError = function () {
