@@ -1,7 +1,11 @@
+## Links
+
+[Back-end repo] (https://github.com/GZMJ-Survey/express-api-survey)
+[Website] (https://gzmj-survey.github.io/client-survey/)
 
 # About
 
-This survey team project front end interacts with it's back end. The app lets a user have authorization, and have/take surveys. This app does not use any extra npm dependencies. This survey app allows users to log in and create their own surveys! The author of a survey can always add new questions to their survey as well as see how many people voted yes or no to each of the survey questions. Users can also submit answers to other users surveys. A user must answer all of the survey questions to submit their answers to a survey otherwise their answers will not be counted and they will see a message asking them to answer all of the questions. 
+This survey team project front end interacts with it's back end. The app lets a user have authorization, and have/take surveys. This app does not use any extra npm dependencies. This survey app allows users to log in and create their own surveys! The author of a survey can always add new questions to their survey as well as see how many people voted yes or no to each of the survey questions. Users can also submit answers to other users surveys. A user must answer all of the survey questions to submit their answers to a survey otherwise their answers will not be counted and they will see a message asking them to answer all of the questions.
 
 
 ## Team Members:
@@ -206,9 +210,3 @@ const onSurveyShow = function (event) {
 ## Tehcnologies used
 
 Mac computers, chrome, npm package, heroku.
-
-
-## Links
-
-Back-end repo: https://github.com/GZMJ-Survey/express-api-survey
-Website: https://gzmj-survey.github.io/client-survey/
