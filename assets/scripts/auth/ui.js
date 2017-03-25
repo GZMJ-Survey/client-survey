@@ -87,6 +87,7 @@ const signOutSuccess = function () {
   $('.alerts').empty();
   $('.survey-alerts').empty();
   clearModalInput('#change-password');
+  $('.field-style').val("");
 };
 
 const signOutError = function () {
