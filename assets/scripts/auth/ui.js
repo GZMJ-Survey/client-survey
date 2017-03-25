@@ -69,6 +69,7 @@ const changePasswordError = function () {
   $('.message').show();
   $('.message').text('Changing password failed!').css('color', 'orange');
   $('#modalChangePassword').modal('hide');
+  clearModalInput('#change-password');
 };
 
 const signOutSuccess = function () {
