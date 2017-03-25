@@ -66,6 +66,7 @@ const onSurveyShow = function (event) {
       $('.col-1-radio').hide();
       $('.col-2-radio').hide();
       $('.question-fail').empty();
+      $('.survey-message').empty();
     }
 
     let clicked = $(this);
@@ -109,6 +110,7 @@ const onSurveyCreate = function(event) {
         .catch(ui.failureSurveyCreate);
     } else {
       $('.survey-message').text("Survey Exists already");
+      $('.field-style').val('');
     }
   } else {
     api.surveyCreate(data)

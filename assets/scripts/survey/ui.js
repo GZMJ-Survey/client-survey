@@ -13,6 +13,7 @@ const successIndex = (data) => {
   $('.index-display').html(surveyHtml);
   $('label.survey-contents').hide();
   return surveyStore;
+
 };
 
 const failureIndex = (error) => {
