@@ -9,10 +9,11 @@ const store = require('../store');
 const onSignUp = function(event) {
   event.preventDefault();
   let data = getFormFields(event.target);
-  if (data.credentials.password === data.credentials.password_confirmation) {
+  if (data.credentials.password === data.credentials.password_confirmation
+    && data.credentials.password !== "" && data.credentials.password_confirmation !== "") {
       api.signUp(data)
         .then(ui.signUpSuccess)
-        .catch(ui.signUpFailure);
+        .catch(ui.signUpError);
     } else {
       ui.signUpError();
     }
