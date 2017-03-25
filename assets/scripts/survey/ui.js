@@ -22,6 +22,7 @@ const failureIndex = (error) => {
 const successSurveyCreate = (data) => {
   $('#survey-create')[0].reset();
   $('.alerts').text('Created New Survey!');
+  $('.survey-message').empty();
 };
 
 const failureSurveyCreate = (error) => {

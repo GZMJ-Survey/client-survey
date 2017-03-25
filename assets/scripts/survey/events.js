@@ -89,18 +89,41 @@ const onSurveyShow = function (event) {
 const onSurveyCreate = function(event) {
   event.preventDefault();
   let data = getFormFields(event.target);
-  api.surveyCreate(data)
-    .then((response) => {
-      store.surveyid = response.survey.id;
-      return store;
-    })
-    .then(ui.successSurveyCreate)
-    .then(onSurveyIndex)
-    .catch(ui.failureSurveyCreate);
 
-    $('.create-button').on('click', function(){
-      $('.field-style').val('');
-    });
+  let result = [];
+  if (surveyStore.survey.length !== 0){
+
+    for (let i = 0; i<surveyStore.survey.length; i++) {
+      if (data.survey.title===surveyStore.survey[i].title){
+        result.push(surveyStore.survey[i].title);
+      }
+    }
+    if (result.length===0){
+      api.surveyCreate(data)
+        .then((response) => {
+          store.surveyid = response.survey.id;
+          return store;
+        })
+        .then(ui.successSurveyCreate)
+        .then(onSurveyIndex)
+        .catch(ui.failureSurveyCreate);
+    } else {
+      $('.survey-message').text("Survey Exists already");
+    }
+  } else {
+    api.surveyCreate(data)
+      .then((response) => {
+        store.surveyid = response.survey.id;
+        return store;
+      })
+      .then(ui.successSurveyCreate)
+      .then(onSurveyIndex)
+      .catch(ui.failureSurveyCreate);
+  }
+
+  $('.create-button').on('click', function(){
+    $('.field-style').val('');
+  });
 };
 
 const onUpdateSurveyQuestion = function(event) {
