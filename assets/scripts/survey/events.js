@@ -5,6 +5,7 @@ const api = require('./api');
 const ui = require('./ui');
 const store = require('../store');
 const surveyStore = require('../surveyStore');
+const thisSurveyStore = require('../thisSurveyStore');
 
 const onSurveyIndex = function(event) {
   if (event && event.preventDefault) {
@@ -21,6 +22,7 @@ const onSurveyShow = function (event) {
   api.surveyShow(id)
   .then((response)=> {
     let survey= response.survey;
+    thisSurveyStore.survey = survey;
     //show user message if no questions in survey
     survey.questions.length===0?
     $('.empty-survey').text("There are currently no questions in this survey.")
@@ -107,10 +109,31 @@ const onUpdateSurveyQuestion = function(event) {
 
   let data = getFormFields(event.target);
 
-  api.updateSurveyQuestion(data)
-    .then(onSurveyIndex)
-    .then(ui.successQuestionCreate)
-    .catch(ui.failureQuestionCreate);
+  let result = [];
+  if (thisSurveyStore.survey.questions.length !== 0){
+
+    for (let i = 0; i<thisSurveyStore.survey.questions.length; i++) {
+      if (data.survey.questions.problem===thisSurveyStore.survey.questions[i].problem){
+        result.push(thisSurveyStore.survey.questions[i].problem);
+      }
+    }
+    if (result.length===0){
+      api.updateSurveyQuestion(data)
+        .then(onSurveyIndex)
+        .then(ui.successQuestionCreate)
+        .catch(ui.failureQuestionCreate);
+    } else {
+      $('h1').text("question exist already");
+    }
+
+  } else {
+    console.log(result);
+    api.updateSurveyQuestion(data)
+      .then(onSurveyIndex)
+      .then(ui.successQuestionCreate)
+      .catch(ui.failureQuestionCreate);
+
+  }
 };
 
 const onAnswer = function(event) {

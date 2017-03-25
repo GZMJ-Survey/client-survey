@@ -34,7 +34,7 @@ const successQuestionCreate = (data) => {
 };
 
 const failureQuestionCreate = (error) => {
-  $('.alerts').text('Invalid User');
+  $('.question-fail').text("question name already taken")
 };
 
 const successAnswer = (data) => {
