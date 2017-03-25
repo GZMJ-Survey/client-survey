@@ -91,9 +91,8 @@ const onSurveyCreate = function(event) {
   event.preventDefault();
   let data = getFormFields(event.target);
 
-  let result = [];
   if (surveyStore.survey.length !== 0){
-
+  let result = [];
     for (let i = 0; i<surveyStore.survey.length; i++) {
       if (data.survey.title===surveyStore.survey[i].title){
         result.push(surveyStore.survey[i].title);
@@ -134,28 +133,28 @@ const onUpdateSurveyQuestion = function(event) {
   }
 
   let data = getFormFields(event.target);
-
   let result = [];
-  if (thisSurveyStore.survey.questions.length !== 0){
+  if (thisSurveyStore.survey.questions.length !== 0) {
 
     for (let i = 0; i<thisSurveyStore.survey.questions.length; i++) {
       if (data.survey.questions.problem===thisSurveyStore.survey.questions[i].problem){
         result.push(thisSurveyStore.survey.questions[i].problem);
       }
     }
-    if (result.length===0){
+    if (result.length===0) {
       api.updateSurveyQuestion(data)
         .then(onSurveyIndex)
         .then(ui.successQuestionCreate)
         .catch(ui.failureQuestionCreate);
     } else {
-      $('.question-fail').text("question exist already");
-      $('.field-style').val('');
+      result=[];
+      $('.question-fail').text("question exists already");
+      $('.fs1').val('');
 
     }
 
   } else {
-    console.log(result);
+    result=[];
     api.updateSurveyQuestion(data)
       .then(onSurveyIndex)
       .then(ui.successQuestionCreate)

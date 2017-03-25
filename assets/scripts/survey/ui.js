@@ -36,7 +36,6 @@ const successQuestionCreate = (data) => {
 };
 
 const failureQuestionCreate = (error) => {
-  $('.question-fail').text("question name already taken")
 };
 
 const successAnswer = (data) => {
