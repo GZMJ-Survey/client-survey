@@ -110,6 +110,7 @@ const onSurveyCreate = function(event) {
     } else {
       $('.survey-message').text("Survey Exists already");
       $('.field-style').val('');
+      onSurveyIndex();
     }
   } else {
     api.surveyCreate(data)

@@ -3,7 +3,7 @@ const surveyStore = require('../surveyStore');
 const store = require('../store');
 const surveyIndexHandlerbars = require('../templates/helpers/survey-index.handlebars');
 const api = require('./api.js');
-
+const events = require('./events');
 
 
 const successIndex = (data) => {
@@ -28,6 +28,7 @@ const successSurveyCreate = (data) => {
 
 const failureSurveyCreate = (error) => {
   $('.alerts').text('Survey name has already been created, choose new name');
+  events.onSurveyIndex();
 };
 
 const successQuestionCreate = (data) => {
